@@ -1,2 +1,5 @@
 # Python-Projects
-A simple starter task management app to showcase some basic python skills.
+A repository showcasing various python applications.
+
+**Projects**
+- A simple task management application
