@@ -49,11 +49,8 @@ while True:
             task = int(input("Edit task: "))
             name = input("Enter new name: ")
             desc = input("Enter new description: ")
-
             sql = "UPDATE tasks SET task = %s, description = %s WHERE task_id = %s"
-
             task_info = (name, desc, task)
-
             mycursor.execute(sql, task_info)
 
             database.commit()
