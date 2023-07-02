@@ -1,6 +1,6 @@
 import mysql.connector
 
-database = mysql.connector.connect(host='localhost', database='mcstudio', user='root', password='marscornelius')
+database = mysql.connector.connect(host='10.211.55.6', database='taskmanager', user='root', password='marscornelius')
 
 if database.is_connected():
     print("Connection Successful..")
