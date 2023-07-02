@@ -1,6 +1,13 @@
+############################################################################
+#                                                                          #
+#                          Created By: Kibwe Gooding                       #
+#                               Date: July 1st 2023                        #
+#                            A Simple Task Manager                         #
+############################################################################
+
 import mysql.connector
 
-database = mysql.connector.connect(host='10.211.55.6', database='taskmanager', user='root', password='marscornelius')
+database = mysql.connector.connect(host='', port=3306, database='', user='',password='')
 
 if database.is_connected():
     print("Connection Successful..")
@@ -49,8 +56,11 @@ while True:
             task = int(input("Edit task: "))
             name = input("Enter new name: ")
             desc = input("Enter new description: ")
+
             sql = "UPDATE tasks SET task = %s, description = %s WHERE task_id = %s"
+
             task_info = (name, desc, task)
+
             mycursor.execute(sql, task_info)
 
             database.commit()
