@@ -7,7 +7,7 @@
 
 import mysql.connector
 
-database = mysql.connector.connect(host='', port=3306, database='', user='',password='')
+database = mysql.connector.connect(host='', port=3306, database='', user='', password='')
 
 if database.is_connected():
     print("Connection Successful..")
@@ -36,7 +36,7 @@ while True:
             desc = input("Enter description: ")
             sql = "INSERT INTO tasks (task, description) VALUES (%s, %s)"
             entry = (task.capitalize(), desc.capitalize())
-            mycursor.execute(sql,entry)
+            mycursor.execute(sql, entry)
 
             database.commit()
 
@@ -46,7 +46,7 @@ while True:
             task = int(input("Delete task: "))
             sql = "DELETE FROM tasks where task_id = %s"
             task_id = (task,)
-            mycursor.execute(sql,task_id)
+            mycursor.execute(sql, task_id)
 
             database.commit()
 
