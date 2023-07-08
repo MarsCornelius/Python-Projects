@@ -4,7 +4,6 @@
 # Copyright (c) 2023, Kibwe Gooding. All rights reserved.
 
 import os
-import send2trash
 
 path = '/Users/marscornelius/Downloads'
 
@@ -16,7 +15,7 @@ def clear_downloads():
             try:
                 file_path = os.path.join(path, file)
                 os.chmod(file_path, 0o777)
-                send2trash.send2trash(file_path)
+                os.remove(file_path)
             except OSError as e:
                 print(str(e) + ": " + file)
 
